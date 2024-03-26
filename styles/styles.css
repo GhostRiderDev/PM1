@@ -1,0 +1,395 @@
+@font-face {
+  font-family: "Geist-Light";
+  src: url("./../public/fonts/Geist-Light.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Geist-Bold";
+  src: url("./../public/fonts/Geist-Bold.woff2") format("woff2");
+}
+
+:root {
+  --background-color: radial-gradient(
+    circle at top,
+    #202030 0%,
+    #202030 10%,
+    #0a0a0a 90%
+  );
+  --color: white;
+  --color-contrast: black;
+  --icon-theme: url("../public/images/lightTheme.png");
+}
+
+html {
+  background: var(--background-color, black);
+  background-attachment: fixed;
+  color: var(--color, white);
+  font-family: "Geist-Light";
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  margin-top: 48px;
+}
+.topHeader {
+  padding: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100vh;
+  align-items: center;
+}
+.navbar {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  height: 40vh;
+}
+nav {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  border: 0.0625rem transparent;
+  background: var(--color);
+  width: 30%;
+  height: 4%;
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  top: 0;
+  font-size: 1.1em;
+  font-family: "Geist-Light";
+  font-weight: 700;
+  z-index: 2;
+}
+
+.mod {
+  position: fixed;
+  top: 0;
+  width: 10%;
+  height: 5%;
+  z-index: 2;
+  inset: 3vh 90vw;
+}
+#btnTheme {
+  padding: 0;
+  margin: 0;
+  width: 2rem;
+  height: 2rem;
+  background-image: var(--icon-theme);
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: none;
+  outline: none;
+}
+
+nav a:hover {
+  color: var(--color);
+  background-color: var(--color-contrast);
+  padding: 0.2rem;
+  border-radius: 0.5rem;
+  scale: 1.1;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--color-contrast);
+  transition-duration: 200ms;
+  transition-property: background-color, scale;
+  transition-timing-function: cubic-bezier(0, 1.77, 0, 0.93);
+}
+
+nav a.active {
+  color: var(--color);
+  background-color: var(--color-contrast);
+  padding: 0.2rem;
+  border-radius: 0.5rem;
+  scale: 1.1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none;
+  }
+}
+
+.presentation {
+  height: 60vh;
+  justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 8em;
+  font-family: "Geist-Bold";
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 2em;
+  font-family: "Geist-Bold";
+  font-weight: 900;
+}
+
+h3 {
+  font-size: 2em;
+  font-family: "Geist-Bold";
+  font-weight: 900;
+  margin-bottom: 2rem;
+}
+
+h4 {
+  font-size: 1em;
+  font-family: "Geist-Bold";
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+p {
+  font-size: 1.2em;
+  font-family: "Geist-Light";
+  font-weight: 900;
+  margin-bottom: 2rem;
+}
+
+#aboutMe {
+  height: 100vh;
+  width: 40%;
+  position: relative;
+  inset: 0;
+  padding: 10rem 0;
+  margin: auto;
+}
+
+#tecnologies {
+  height: 100vh;
+  width: 60%;
+  position: relative;
+  inset: 0;
+  padding: 5rem 0;
+  margin: auto;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(11.25rem, 1fr));
+  row-gap: 1.25rem;
+  column-gap: 1.875rem;
+}
+
+.card {
+  padding: 0.625rem;
+  text-align: center;
+  display: flex;
+  background-color: white;
+  justify-content: start;
+  align-items: center;
+  border-radius: 0.625rem;
+  animation: reveal linear both;
+  animation-timeline: view();
+  animation-range: entry 30% cover 50%;
+}
+
+@keyframes reveal {
+  from {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+  to {
+    margin-bottom: 0;
+    margin-bottom: 0;
+  }
+}
+
+.card img {
+  height: auto;
+  margin-bottom: 0.625rem;
+  margin-right: 0.5rem;
+}
+
+.card p {
+  font-weight: 500;
+  color: black;
+  position: relative;
+  inset: 0;
+  margin: auto;
+}
+
+#activities {
+  position: relative;
+  inset: 0;
+  height: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#btnToAddAct {
+  height: 3rem;
+  width: 3rem;
+  font-size: 3.5em;
+  margin: 0 55% 2% 0;
+  border: 0;
+  padding: 0;
+  padding: auto;
+  text-align: center;
+  background-color: var(--color);
+  color: var(--color-contrast);
+  border-radius: 50%;
+  line-height: 3rem;
+}
+
+#btnToAddAct:hover::before {
+  animation: none;
+}
+
+#btnToAddAct::before {
+  content: "";
+  width: 120%;
+  height: 120%;
+  background: var(--color);
+  position: absolute;
+  margin: auto;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  transform: translate(-8%, -8%);
+  animation-name: pulse;
+  animation-duration: 2s;
+  animation-timeline: ease-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    scale: 1.2;
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+#formAddActivity {
+  width: 30%;
+  padding: 0.5rem 1rem;
+  background-color: white;
+  color: black;
+  border-radius: 0.5rem;
+  height: max-content;
+  display: none;
+  margin-bottom: 5%;
+}
+fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input {
+  border-radius: 0.5rem;
+  height: 2rem;
+}
+
+textarea {
+  border-radius: 0.5rem;
+}
+p {
+  display: flex;
+  align-items: center;
+  text-wrap: balance;
+}
+
+input:focus,
+textarea:focus {
+  outline: 1px solid rgb(61, 155, 218);
+  border: none;
+}
+
+legend {
+  margin-bottom: 0.5rem;
+}
+
+button {
+  background-color: green;
+  color: white;
+  padding: 1rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  width: 46%;
+  position: relative;
+  margin: auto;
+  inset: 0;
+  border: none;
+}
+
+button:hover {
+  scale: 1.1;
+  cursor: pointer;
+}
+
+.containerButtons {
+  display: flex;
+}
+
+#btnCancelToAddActivy {
+  background-color: red;
+  border: none;
+}
+
+#containerCards {
+  margin: 1rem;
+  width: 60%;
+  gap: 0.5rem;
+  background-color: var(--color);
+  border-radius: 0.5rem;
+  padding: 0.8rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  row-gap: 1.25rem;
+  column-gap: 1.875rem;
+  min-height: 14rem;
+}
+.cardAct {
+  border-radius: 0.5rem;
+  padding: 0.4rem;
+  background-color: var(--color-contrast);
+  width: 92%;
+}
+
+.cardAct p {
+  font-size: 0.7em;
+  margin-top: 1rem;
+  padding: 0;
+  text-align: center;
+  text-wrap: pretty;
+}
+
+.cardAct img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  margin: 10% 30%;
+}
+
+footer {
+  margin: 0;
+  padding: 1rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: var(--color);
+  color: var(--color-contrast);
+}

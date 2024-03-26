@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <link
+      rel="preload"
+      href="/public/fonts/Geist-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/public/fonts/Geist-Light.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Pagina Wen</title>
+    <meta
+      name="description"
+      content="cos4h muestra su perfil, sus tecnologias favoritas, presenta sus actividades favorita y añade crud"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Olvadis Hernandez" />
+    <link rel="icon" type="image/icon" href="./public/images/cos4h3d.gif" />
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+  </head>
+  <body>
+    <main>
+      <section id="home">
+        <header class="topHeader">
+          <div class="navbar">
+            <nav>
+              <a href="#home">Home</a>
+              <a href="#aboutMe">Sobre Mi</a>
+              <a href="#tecnologies">Tecnologias</a>
+              <a href="#activities">Actividades</a>
+            </nav>
+            <div class="mod">
+              <button id="btnTheme"></button>
+            </div>
+          </div>
+          <div class="presentation">
+            <h1>COS4θ</h1>
+            <h2>Mi Pagina Web</h2>
+          </div>
+        </header>
+      </section>
+      <section id="aboutMe">
+        <article class="">
+          <header>
+            <h3>¡Hola! soy cos4h</h3>
+          </header>
+          <p>
+            Mi nombre es Olvadis Hernandez, un desarrollador web autodidacta
+            apasionado por el desarrollo web, las ecuaciones y la conexión
+            humana. Con experiencia en metodologías ágiles, me destaco por crear
+            código eficiente y reutilizable, priorizando la experiencia del
+            usuario en mis proyectos.
+          </p>
+        </article>
+      </section>
+      <section id="tecnologies">
+        <header>
+          <h3>Mis Tecnologias Favoritas</h3>
+        </header>
+        <div class="grid-container">
+          <div class="card">
+            <img
+              src="./public/images/spring-3.svg"
+              alt="Logo spring"
+              width="40px"
+              loading="lazy"
+            />
+            <p>Spring Framework</p>
+          </div>
+          <div class="card">
+            <img
+              src="./public/images/react-original-wordmark.svg"
+              alt="Logo react"
+              width="40px"
+              loading="lazy"
+            />
+            <p>React</p>
+          </div>
+          <div class="card">
+            <img
+              src="./public/images/nodejs-original-wordmark.svg"
+              alt="Logo nodejs"
+              width="40px"
+              loading="lazy"
+            />
+            <p>NodeJS</p>
+          </div>
+          <div class="card">
+            <img
+              src="./public/images/mysql-plain.svg"
+              alt="Logo mysql"
+              width="40px"
+              loading="lazy"
+            />
+            <p>MySQL</p>
+          </div>
+          <div class="card">
+            <img
+              src="./public/images/mongodb-plain.svg"
+              alt="Logo Mongo DB"
+              width="40px"
+              loading="lazy"
+            />
+            <p>Mongo DB</p>
+          </div>
+          <div class="card">
+            <img
+              src="./public/images/postgresql_elephant.svg.png"
+              alt="Logo PostgreSQL"
+              width="40px"
+              loading="lazy"
+            />
+            <p>PostgreSQL</p>
+          </div>
+          <div class="card">
+            <img
+              src="./public/images/html5-original.svg"
+              alt="Logo HTML"
+              width="40px"
+              loading="lazy"
+            />
+            <p>HTML</p>
+          </div>
+          <div class="card">
+            <img
+              src="./public/images/css3-plain.svg"
+              alt="Logo CSS"
+              width="40px"
+              loading="lazy"
+            />
+            <p>CSS</p>
+          </div>
+
+          <div class="card">
+            <img
+              src="./public/images/docker-Symbol.png"
+              alt="Logo Docker"
+              width="40px"
+              loading="lazy"
+            />
+            <p>Docker</p>
+          </div>
+          <div class="card">
+            <img
+              src="./public/images/redux-original.svg"
+              alt="Logo Redux"
+              width="40px"
+              loading="lazy"
+            />
+            <p>Redux</p>
+          </div>
+
+          <div class="card">
+            <img
+              src="./public/images/git-plain.svg"
+              alt="Logo Git"
+              width="40px"
+              loading="lazy"
+            />
+            <p>Git</p>
+          </div>
+        </div>
+      </section>
+      <section id="activities">
+        <header>
+          <h3>Mis actividades Favoritas</h3>
+        </header>
+        <button id="btnToAddAct">+</button>
+        <form id="formAddActivity">
+          <fieldset>
+            <legend>Formulario Actividad</legend>
+            <input
+              type="text"
+              placeholder="Titulo de la Actividad"
+              id="inputTitle"
+            />
+            <textarea
+              cols="10"
+              rows="10"
+              placeholder="Descrición de la Actividad"
+              id="txtArDescription"
+            ></textarea>
+            <input type="url" placeholder="URL de la Imagen" id="inputImgUrl" />
+            <div class="containerButtons">
+              <button type="submit" id="btnCancelToAddActivy">Cancelar</button>
+              <button type="submit" id="btnAddActivity">
+                Agregar Actividad
+              </button>
+            </div>
+          </fieldset>
+        </form>
+        <div id="containerCards"></div>
+      </section>
+    </main>
+    <footer>
+      <p>Todos los derechos de autor rerervados &copy;</p>
+    </footer>
+    <script src="./scripts/index.js"></script>
+  </body>
+</html>
